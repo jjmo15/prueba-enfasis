@@ -1,17 +1,19 @@
-Indica la imagen base que utilizarás para tu contenedor
-FROM node:14
+FROM node:16.14.2
 
-Establece el directorio de trabajo dentro del contenedor
+# Copia los archivos necesarios al contenedor
+COPY . /app/
+
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-Copia los archivos de tu aplicación al directorio de trabajo del contenedor
-COPY . /app
-
-Instala las dependencias de tu aplicación
+# Ejecuta comandos en el contenedor
 RUN npm install
 
-Expone el puerto en el que se ejecuta tu aplicación (si es necesario)
-EXPOSE 3000
+# Expone un puerto
+EXPOSE 3001
 
-Define el comando que se ejecutará cuando el contenedor se inicie
+# Define una variable de entorno
+ENV DB_URL postgres://hvgodojd:BPNdoLTxNfY3osjO_Xk5MulSbNTXlIt6@peanut.db.elephantsql.com/hvgodojd
+
+# Ejecuta un comando al iniciar el contenedor
 CMD ["npm", "start"]
