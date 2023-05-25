@@ -27,9 +27,5 @@ jobs:
           tag_with_sha: true
           tags: ${{ github.sha }}
 		  
+
 		  
-		  si hablamos del dataset debemos decir que este contiene 2240 registros, 
-		  los cuales se distribuyen en 29 atributos los cuales pueden clasificarse 
-		  en las siguientes tablas:
-		  
-		 informacion del cliente, los productos, las promociones y por ultimo el lugar donde se realiza la compra de x poducto
